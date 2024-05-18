@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  api_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "28000:8000"
+    volumes:
+      - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      - MARKER_API_HOST=0.0.0.0
+    shm_size: '32gb'
+    restart: always
