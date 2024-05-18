@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN apt-get update && apt-get install libgl1 y
+RUN apt-get update && apt-get install libgl1 -y
 RUN pip install -e .
 
 ENV MARKER_API_HOST=127.0.0.1
